@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@font-face {
+  font-family: 'Dancing Script', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+}
+@font-face {
+  font-family: 'Sacramento', sans-serif;
+  src:url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+}
+@font-face {
+  font-family: 'IBM Plex Mono', sans-serif;
+  src:url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+}
+
+/*Overall and Background Formatting*/
+body{
+  background-color: #314b57;/*Iceberg*/
+}
+div{
+  width:70%;
+  margin: auto;
+  border-radius: 1em;
+  padding: 1em;
+  background-color: #99944E;
+  color: #E3E3E3;
+  font-family: 'IBM Plex Mono'
+}
+/*Menu Formatting*/
+h1{
+  text-align: center;
+  color: #54442B;
+  font-family: 'Dancing Script';
+}
+.float. h1{
+  float: center;
+}
+h2{
+  text-align: center;
+  color: #54442B;
+  font-family: 'Sacramento';
+}
+.float. h2{
+  float: center;
+}
+.header-image{
+  display: block;
+  width: 50%;
+  margin: auto;
+  border-radius: 20em;
+}
+/*Menu Dropdowns*/
+.menu-item {
+    display: block;
+    margin: auto;
+    min-width: .5em;
+    text-align: center;
+    background-color: #54442B;
+    padding: .2em;
+}
+.menu-item a {
+    color: #B39057;
+    text-decoration: none;
+    margin: auto;
+    text-align: center;
+}
+.menu-item:hover {
+    background-color: #CBC9AD;
+}
+.dropdown {
+    display: block;
+    margin: center;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin: center;
+    color: #54442B;
+    background-color: #CBC9AD;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #E3E3E3;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-item {
+    display: block;
+    text-align: center;
+    margin: center;
+    padding: .2em;
+}
+.dropdown-item:hover, .dropdown-item:hover a {
+    color: #B39057;
+    background-color: #CBC9AD;
+    margin: center;
+}
+/*Content Formatting*/
+p::first-letter{ /*First letter of every paragraph*/
+  font-family: 'Sacramento', cursive;
+  font-size: 36px;
+  letter-spacing: -.1em;
+}
