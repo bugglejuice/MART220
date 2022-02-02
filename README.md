@@ -37,8 +37,8 @@ This repository exists as a central storage usability hub for my school assignme
 All content therein is for educational and reference purposes and is created by myself, Zack Leach, under the instruction of Michael Cassens.
 
 # 2> Contact #
-Zack Leach(He, him, his)
-zack.a.leach@gmail.com
+Zack Leach(He, him, his)/
+zack.a.leach@gmail.com/
 zachary.leach@umontana.edu
 
 # 3> Navigating this Repository. #
