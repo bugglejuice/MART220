@@ -38,3 +38,7 @@ Repository created locally and pushed to GitHub with applicable documentation.
 ### Week 2: Basic P5.js refresher
 #### 2/1/22 (LATE)
 Assignment created and pushed to GitHub for late assignment. Utilizing p5.js to create basic shapes of varying color and animating them.
+
+### Week 3: Timers, Pictures and organization
+#### 2/4/22
+Improvements on previous assignment and organization of the repository. Implemented pictures into project and included a timer.
