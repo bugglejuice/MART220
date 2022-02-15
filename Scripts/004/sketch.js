@@ -47,17 +47,13 @@ function draw() {
   }
   text(time / 100, 520, 30);
   time += 1;
-  playerChar();
+
+  let ship = new player(400,225,10);
+
+  ship.playerChar();
 } 
 
 function playerChar(){
-  let w = 87;
-  let a = 65;
-  let s = 83;
-  let d = 68;
-  let Lmouse = 1;
-  let ship = new player(400,225,10);
-
   image (shipImg,this.x,this.y);
   //rotate to follow mouse
   translate(this.x, this.y);
@@ -67,6 +63,12 @@ function playerChar(){
 }
 
 function move(){
+  let w = 87;
+  let a = 65;
+  let s = 83;
+  let d = 68;
+  let Lmouse = 1;
+
   //keybinding
   if (key == w){ 
     this.y -= 3; }
