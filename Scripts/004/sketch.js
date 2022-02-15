@@ -54,6 +54,7 @@ function draw() {
 } 
 
 function playerChar(){
+  ship;
   image (shipImg,this.x,this.y);
   //rotate to follow mouse
   translate(this.x, this.y);
@@ -63,6 +64,7 @@ function playerChar(){
 }
 
 function move(){
+  ship;
   let w = 87;
   let a = 65;
   let s = 83;
