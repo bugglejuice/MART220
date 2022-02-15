@@ -58,7 +58,7 @@ function playerChar(){
   let d = 68;
   let Lmouse = 1;
 
-  let ship = player(player.x,player.y);
+  let ship = player;
   image (shipImg,player.x,player.y);
   //rotate to follow mouse
   translate(player.x, player.y);
