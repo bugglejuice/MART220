@@ -1,0 +1,7 @@
+W = 87
+A = 65
+S = 83
+D = 68
+LMouse = 1
+RMouse = 2
+Space = 32
