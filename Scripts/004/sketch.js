@@ -49,22 +49,13 @@ function draw() {
   time += 1;
 
   let ship = new player(400,225,10);
-
-  ship.playerChar();
-} 
-
-function playerChar(){
-  ship;
-  image (shipImg,this.x,this.y);
+  image (shipImg,ship.x,ship.y);
   //rotate to follow mouse
-  translate(this.x, this.y);
-  let angle = atan2(mouseY - this.y, mouseX - this.x);
+  translate(ship.x, ship.y);
+  let angle = atan2(mouseY - ship.y, mouseX - ship.x);
   rotate(angle);
   move();
-}
 
-function move(){
-  ship;
   let w = 87;
   let a = 65;
   let s = 83;
@@ -73,13 +64,13 @@ function move(){
 
   //keybinding
   if (key == w){ 
-    this.y -= 3; }
+    ship.y -= 3; }
   if (key == a){ 
-    this.x -= 3; }
+    ship.x -= 3; }
   if (key == s){ 
-    this.y += 3; }
+    ship.y += 3; }
   if (key == d){ 
-    this.x += 3; }
+    ship.x += 3; }
   if (key == Lmouse ){
     console.log('Shots Fired'); }
   }
