@@ -57,7 +57,8 @@ function playerChar(){
   let s = 83;
   let d = 68;
   let Lmouse = 1;
-
+  let player;
+  
   image (shipImg,player.x,player.y);
   //rotate to follow mouse
   translate(player.x, player.y);
