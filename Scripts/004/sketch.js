@@ -54,7 +54,6 @@ function draw() {
   translate(ship.x, ship.y);
   let angle = atan2(mouseY - ship.y, mouseX - ship.x);
   rotate(angle);
-  move();
 
   let w = 87;
   let a = 65;
