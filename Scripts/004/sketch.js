@@ -11,11 +11,10 @@ var asteroidImg;
 var shipImg;
 
 class player {
-  constructor(x,y,hp,image) {
-    player.x = 400;
-    player.y = 225;
-    player.hp = 10;
-    player.image = shipImg;
+  constructor(x,y,hp) {
+    this.x = 400;
+    this.y = 225;
+    this.hp = 10;
   }
 }
 
@@ -57,12 +56,12 @@ function playerChar(){
   let s = 83;
   let d = 68;
   let Lmouse = 1;
-  let player(400,225,10,shipIMG);
+  let ship = new player(400,225,10);
 
-  image (shipImg,player.x,player.y);
+  image (shipImg,this.x,this.y);
   //rotate to follow mouse
-  translate(player.x, player.y);
-  let angle = atan2(mouseY - player.y, mouseX - player.x);
+  translate(this.x, this.y);
+  let angle = atan2(mouseY - this.y, mouseX - this.x);
   rotate(angle);
   move();
 }
@@ -70,15 +69,15 @@ function playerChar(){
 function move(){
   //keybinding
   if (key == w){ 
-    player.y -= 3; }
+    this.y -= 3; }
   if (key == a){ 
-    player.x -= 3; }
+    this.x -= 3; }
   if (key == s){ 
-    player.y += 3; }
+    this.y += 3; }
   if (key == d){ 
-    player.x += 3; }
+    this.x += 3; }
   if (key == Lmouse ){
-    pass; }
+    console.log('Shots Fired'); }
   }
 /*
 function asteroid0(){
