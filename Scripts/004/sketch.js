@@ -43,7 +43,7 @@ function draw() {
   textSize(32);
   text('Time Elapsed:', 300, 30);
   for (let t = 0; t > 100; t++){
-    time = t
+    time = t;
   }
   text(time / 100, 520, 30);
   time += 1;
