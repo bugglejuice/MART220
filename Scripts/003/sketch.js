@@ -35,7 +35,6 @@ function draw() {
   text("Don't let them touch you!", 2,20);
   textSize(18);
   text('Zack Leach', 700, 448);
-  text("Zack Leach")
   fill('Red');
   textFont('Helvetica');
   textSize(32);
