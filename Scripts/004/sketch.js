@@ -10,6 +10,15 @@ var astSpeed = [];
 var asteroidImg;
 var shipImg;
 
+class player {
+  constructor(x,y,hp,image) {
+    player.x = 400;
+    player.y = 225;
+    player.hp = 10;
+    player.image = shipImg;
+  }
+}
+
 function preload(){
   asteroidImg = loadImage("Assets/sprites/rock.png");
   shipImg = loadImage("Assets/sprites/player.png");
@@ -19,15 +28,6 @@ function setup() {
   let cnv = createCanvas(800, 450);
   cnv.parent('myContainer');
   setInterval(1000);
-}
-
-class player {
-  constructor(x,y,hp,image) {
-    player.x = 400;
-    player.y = 225;
-    player.hp = 10;
-    player.image = shipImg;
-  }
 }
 
 function draw() {
