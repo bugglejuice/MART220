@@ -1,36 +1,59 @@
-let button;
 var timerVal = 10;
 let time = 0;
 let dispTime = 0;
-let life = 10;
-
-var astX = [];
-var astY = [];
-var astSpeed = [];
-var asteroidImg;
-var shipImg;
-
-class player {
-  constructor(x,y,hp) {
-    this.x = 400;
-    this.y = 225;
-    this.hp = 10;
-  }
-}
+let w = 87;
+let a = 65;
+let s = 83;
+let d = 68;
+var mult = 1;
+var gameIMG = [];//0=asteroid, 1=ship
 
 function preload(){
-  asteroidImg = loadImage("Assets/sprites/rock.png");
-  shipImg = loadImage("Assets/sprites/player.png");
+  gameIMG[0] = loadImage("Assets/sprites/rock.png");
+  gameIMG[1] = loadImage("Assets/sprites/player.png");
 }
 
 function setup() {
   let cnv = createCanvas(800, 450);
   cnv.parent('myContainer');
   setInterval(1000);
+
+  ast0 = new asteroid(800,100,3,10);
+  ast1 = new asteroid(800,300,4,10);
+  ast2 = new asteroid(800,10,2,10);
+  ast3 = new asteroid(800,50,2,10);
+  ship = new player(400,225,10);
 }
 
 function draw() {
   background('Black');
+
+  ast0.move(); //Start spawning asteroids
+  ast0.display();
+  if (time/100 >= 3){
+    ast1.move();
+    ast1.display();
+  }
+  else if (time/100 >= 8){
+    ast2.move();
+    ast2.display();
+  }
+  else if (time/100 >= 12){
+    ast3.move();
+    ast3.display();
+  }
+
+  UI();
+  runtime();
+
+
+  ship.move(); //Spawn player ship
+  ship.display();
+  timeIt();
+  
+}
+
+function UI(){
   //Text
   fill('yellow');
   textFont('Impact');
@@ -41,97 +64,79 @@ function draw() {
   fill('Red');
   textFont('Helvetica');
   textSize(32);
+}
+
+function runtime(){  //Big clock
   text('Time Elapsed:', 300, 30);
   for (let t = 0; t > 100; t++){
     time = t;
   }
   text(time / 100, 520, 30);
   time += 1;
+}
 
-  let ship = new player(400,225,10);
-  image (shipImg,ship.x,ship.y);
-  //rotate to follow mouse
-  translate(ship.x, ship.y);
-  let angle = atan2(mouseY - ship.y, mouseX - ship.x);
-  rotate(angle);
-
-  let w = 87;
-  let a = 65;
-  let s = 83;
-  let d = 68;
-  let Lmouse = 1;
-
-  //keybinding
-  if (key == w){ 
-    ship.y -= 3; }
-  if (key == a){ 
-    ship.x -= 3; }
-  if (key == s){ 
-    ship.y += 3; }
-  if (key == d){ 
-    ship.x += 3; }
-  if (key == Lmouse ){
-    console.log('Shots Fired'); }
-  }
-/*
-function asteroid0(){
-  astX[0] = 24;
-  astY[0] = 24;
-  astSpeed[0] = 3
-
-  //Object1
-  stroke(255,205,0);
-  strokeWeight(48);
-  point(astX[0],astY[0]);
-  astX[0] += astSpeed[0];
-  astY[0] += astSpeed[0];
-  if (astX[0] + 24 >= 800 || astX[0] <= 24){
-    astSpeed[0] *= -1;
-  }
-  if (astY[0] + 24 >= 450 || astY[0] <= 24){
-    astSpeed[0] *= -1;
+function timeIt() {  //spawn and speed timer
+  if(time >= 10 && time <= 60){
+    for(var i; i < 10; i++){
+      mult += i;
+    }
   }
 }
 
-function asteroid1(){
-  astX[1] = 400;
-  astY[1] = 200;
-  astSpeed[1] = 4
-
-  //Object2
-  stroke(255,51,51);
-  strokeWeight(32);
-  point(astX[1],astY[1]);
-  astX[1] += astSpeed[1];
-  astY[1] += astSpeed[1];
-  if (astX[1] + 16 >= 800 || astX[1] <= 16){
-    astSpeed[1] *= -1;
+class player {
+  constructor(x,y,hp) {
+    this.x = 0;
+    this.y = 0;
+    this.hp = 0;
   }
-  if (astY[1] + 16 >= 450 || astY[1] <= 16){
-    astSpeed[1] *= -1;
+  move(){
+    if (keyIsDown(w)){ 
+      this.y -= 3; 
+    }
+    if (keyIsDown(a)){ 
+      this.x -= 3;
+    }
+    if (keyIsDown(s)){ 
+      this.y += 3; 
+    }
+    if (keyIsDown(d)){ 
+      this.x += 3; 
+    }
+    if (mouseIsPressed == true){
+      console.log('shots fired!');
+    }
   }
-  if ((astX[1] + 16 == mouseX || astX[1] - 16 == mouseY) && (astY[1] + 16 == mouseY || astY[1] - 16 == mouseY)){
-    astSpeed[1] *= -1;
-  }
-}
-
-function asteroid2(){
-  astX[2] = 200;
-  astY[2] = 400;
-  astSpeed[2] = 2
-
-
-  //Object3
-  stroke(0,0,255);
-  strokeWeight(64);
-  point(astX[2],astY[2]);
-  astX[2] += astSpeed[2];
-  astY[2] += astSpeed[2];
-  if (astX[2] + 32 >= 800 || astX[2] <= 32){
-    astSpeed[2] *= -1;
-  }
-  if (astY[2] + 32 >= 450 || astY[2] <= 32){
-    astSpeed[2] *= -1;
+  display(){
+    translate(this.x, this.y);
+  /*  let angle = atan2(mouseY - this.y, mouseX - this.x);
+    rotate(angle);  */
+    image(gameIMG[1],this.x,this.y); 
   }
 }
-*/
+
+
+class asteroid {
+  constructor(x,y,speed,hp){
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.hp = hp; 
+  }
+  move(){
+    this.x -= this.speed * mult;
+    if (this.x <= -100){
+      this.x = 800;
+      this.y = random(10,310);      
+    }
+    if(time/100 >= 5 && time/100 <= 20){ 
+      mult += 0.0025;
+        if (mult >= 3){
+          mult = 3;
+        }
+    }
+  }
+
+  display(){
+    image(gameIMG[0],this.x,this.y,100,100);
+  }
+}

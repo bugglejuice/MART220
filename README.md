@@ -42,3 +42,7 @@ Assignment created and pushed to GitHub for late assignment. Utilizing p5.js to 
 ### Week 3: Timers, Pictures and organization
 #### 2/4/22
 Improvements on previous assignment and organization of the repository. Implemented pictures into project and included a timer.
+
+### Week 4: Starting to take shape
+#### 2/14/22 / 2/15/22 (LATE)
+Revamp system to accomodate classes and objects. Full implementation of timers and graphics with animations. Note: Took entirely too long figuring out how classes actually work.
