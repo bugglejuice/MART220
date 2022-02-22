@@ -46,3 +46,7 @@ Improvements on previous assignment and organization of the repository. Implemen
 ### Week 4: Starting to take shape
 #### 2/14/22 / 2/15/22 (LATE)
 Revamp system to accomodate classes and objects. Full implementation of timers and graphics with animations. Note: Took entirely too long figuring out how classes actually work.
+
+### Week 5: Organization and animations
+#### 2/22/22
+Reorganize file structure to ease editing. Implemented simple thruster animation. New classes made in an attempt to make the ship fire a projectile with end goal of being able to destroy asteroids. tried to adapt tutorial: https://www.youtube.com/watch?v=i7FzA4NavDs for project but was unable to get the objects to draw on screen. Will T/S further but met requirements for this week's homework. Also, implemented bounding to game window.

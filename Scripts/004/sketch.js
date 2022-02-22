@@ -6,7 +6,7 @@ let a = 65;
 let s = 83;
 let d = 68;
 var mult = 1;
-var gameIMG = [];//0=asteroid, 1=ship
+var gameIMG = [];//0=asteroid, 1=ship, 2=Background
 
 function preload(){
   gameIMG[0] = loadImage("Assets/sprites/rock.png");
@@ -128,8 +128,8 @@ class asteroid {
       this.x = 800;
       this.y = random(10,310);      
     }
-    if(time/100 >= 5 && time/100 <= 20){ 
-      mult += 0.0025;
+    if(time/100 >= 5 && time/100 <= 60){ 
+      mult += 0.000125;
         if (mult >= 3){
           mult = 3;
         }
