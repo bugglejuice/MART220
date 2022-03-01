@@ -1,0 +1,8 @@
+healthbar_0.png
+healthbar_1.png
+healthbar_2.png
+healthbar_3.png
+healthbar_4.png
+healthbar_5.png
+healthbar_6.png
+healthbar_7.png

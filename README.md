@@ -50,3 +50,7 @@ Revamp system to accomodate classes and objects. Full implementation of timers a
 ### Week 5: Organization and animations
 #### 2/22/22
 Reorganize file structure to ease editing. Implemented simple thruster animation. New classes made in an attempt to make the ship fire a projectile with end goal of being able to destroy asteroids. tried to adapt tutorial: https://www.youtube.com/watch?v=i7FzA4NavDs for project but was unable to get the objects to draw on screen. Will T/S further but met requirements for this week's homework. Also, implemented bounding to game window.
+
+### Week 6: Continued improvement
+#### 2/28/22
+Added health bar and counter features. Also created sprites and spritesheets for player and obstacles but did not get sprites for asteroids fully implemented. Need to populate sprite class to fully integrate the generation of obstacles nor the damage to obstacles. Still struggling with particles fired from player stopping their draw when the key is released. Need to begin to plan the start and end of the game. Need to keep working on it as much as possible this week to maintain momentum as the project is hitting a critical stage of development where the puzzle pieces are starting to fall into place.

@@ -1,0 +1,3 @@
+smoke_0.png
+smoke_1.png
+smoke_2.png
