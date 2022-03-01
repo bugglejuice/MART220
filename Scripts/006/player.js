@@ -45,6 +45,7 @@ class player {
       if(this.hp >= 14){
         image(gameIMG[3],this.x,this.y);
         animation(dmgAnim[3],this.x+37,this.y+37);
+        this.speed = 0;
         return;
       }else{image(gameIMG[0],this.x,this.y);}
       for (var i = 0; i < jet.length; i++){
