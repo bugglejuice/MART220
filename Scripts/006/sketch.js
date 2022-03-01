@@ -53,7 +53,7 @@ function setup() {
   
 
   for(var i = 0; i < jet.length; i++){
-    jetIMG.push(new imageclass("Assets/Sprites/Jet/"+jet[i],0,0));
+    jetIMG.push(new imageclass("Assets/sprites/Jet/"+jet[i],0,0));
     jetAnim[i] = jetIMG[i].getImage();
   }
   for(var i = 0; i < hpIMG.length; i++){
