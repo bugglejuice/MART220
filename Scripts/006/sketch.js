@@ -57,7 +57,7 @@ function setup() {
     jetAnim[i] = jetIMG[i].getImage();
   }
   for(var i = 0; i < hpIMG.length; i++){
-    hpBar.push(new imageclass("Assets/Sprites/Health/"+hpIMG[i],0,0));
+    hpBar.push(new imageclass("Assets/sprites/Health/"+hpIMG[i],0,0));
     hpAnim[i] = hpBar[i].getImage();
   }
 }
