@@ -9,6 +9,7 @@ class player {
       this.width = 74;
       this.height = 74;
     }
+
     move(){
       if (keyIsDown(w)){
         this.y -= this.speed;
@@ -46,24 +47,21 @@ class player {
       var shipSprite = createSprite(this.x+37,this.y+37,74,74);
       shipSprite.addImage(gameIMG[0]);
       drawSprite(shipSprite);
-      //shipSprite.collide(rock.astSprite);
+      shipSprite.setCollider('circle');
+      
 
 
       if(this.hp >= 14){
-
-
-        
-
         image(gameIMG[3],this.x,this.y);
         animation(dmgAnim[3],this.x+37,this.y+37);
         this.speed = 0;
         return;
       }else{image(gameIMG[0],this.x,this.y);}
-      for (var i = 0; i < jet.length; i++){
+      /*for (var i = 0; i < jet.length; i++){
         if (timer % 2 == 0){
           image(jetAnim[i],this.x, this.y);
-        }      
-      }
+        }  
+      }*/
       
 
       /*
@@ -75,6 +73,19 @@ class player {
       point(this.x + 74, this.y + 74);
       */
 
+    }
+
+    begone(){
+      if (this.x <= -100){
+        this.pop();
+      }
+    }
+
+    spawn(){
+      this.move();
+      this.display();
+      this.shoot();
+      this.damage();
     }
 
     shoot(){

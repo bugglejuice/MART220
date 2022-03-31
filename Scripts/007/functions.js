@@ -16,7 +16,7 @@ function UI(){
     for (let t = 0; t > 100; t++){
       timer = t;
     }
-    text(timer / 100, 520, 30);
+    text(Math.round(timer / 100), 520, 30);
     timer += 1;
   }
   
@@ -59,4 +59,12 @@ function UI(){
       speed = 0;
     }
     image(hpAnim[q],x,y,w,h);
+  }
+
+  function rockSpawner(){
+      rock.forEach(index => index.spawn());
+  }
+
+  function collisionManager(){
+    ship.displace(astSprite, ship.hp -= 2);
   }
