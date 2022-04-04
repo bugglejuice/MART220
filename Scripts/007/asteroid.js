@@ -33,26 +33,28 @@ class asteroid {
     }
 
     display(){
-      var astSprite = createSprite(this.x+50,this.y+50,100,100);
-      astSprite.addImage(astIMG);
-      drawSprite(astSprite);
-      astSprite.setCollider('circle');
-
+      let timeToRock = 0;
+      this.sprite = createSprite(this.x+50,this.y+50,100,100);
+      this.sprite.addImage(astIMG);
+      drawSprite(this.sprite);
+      this.sprite.setCollider('circle');
+      // let newRock = setInterval(() => {
+      //   timeToRock++;
+      //   if(timeToRock > 0){
+      //     clearInterval(newRock);
+      //   }
+      //   rock.push(new asteroid(800,this.randY,this.speed,10));
+        
+      // },2000);
+      
     }
 
     offScreen(){
+      let q = rock.indexOf(this);
       if (this.x <= -100){ 
-        this.hp = 10;
-        this.x = 800;
-        this.y = this.randY;
-        this.speed = random(2,6);
-        for(i=0; i<1;i++){
-          if (rock.length <= 4){
-              setTimeout(() => { 
-                rock.push(new asteroid(random(800,900),this.randY,this.speed,10))
-              },2000);
-          }
-        }
+        console.log('The length is',rock.length,'before');
+        rock.splice(q);          
+        console.log('The length is',rock.length,'after');
       }
     }
 
@@ -63,34 +65,15 @@ class asteroid {
       this.speed = random(2,6);
     }
 
-/*
     damage(){
-      let x = 0;
-      let y = 0;
-//Replace with collisions from p5.play
-
-
-      if(ship.speed == 0){
-        return;
-      }else{
-        if (this.x <= ship.x + 74 && this.x+100 >= ship.x){
-          x = 1;
-        }else{x = 0};
-        if (this.y <= ship.y + 74 && this.y+100 >= ship.y){
-          y = 1;
-        }else{y = 0};
-        if ( x == 1 && y == 1){
-          this.speed = 0;
-          animation(astAnim,this.x,this.y);
-          this.x = 900; // Need to move asteroids to array for removal
-          this.y = random(10,310);
-          ship.hp++;
-
-
-        }
+      let q = rock.indexOf(this);
+      if(this.sprite.displace(ship.sprite)){
+        this.speed = 0;
+        this.hp = 0;
       }
-          
-      
+      if (this.hp <= 0){
+        animation(astAnim,this.x,this.y);
+        rock.splice(q); 
+      }
     }
-*/
-}
+}//Bottom of Class Bracket. Stop fucking with it.

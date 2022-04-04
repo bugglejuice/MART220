@@ -66,5 +66,5 @@ function UI(){
   }
 
   function collisionManager(){
-    ship.displace(astSprite, ship.hp -= 2);
+    
   }

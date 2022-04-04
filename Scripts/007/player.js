@@ -44,34 +44,20 @@ class player {
 
     display(){
 
-      var shipSprite = createSprite(this.x+37,this.y+37,74,74);
-      shipSprite.addImage(gameIMG[0]);
-      drawSprite(shipSprite);
-      shipSprite.setCollider('circle');
+      this.sprite = createSprite(this.x+37,this.y+37,74,74);
+      this.sprite.addImage(gameIMG[0]);
+      drawSprite(this.sprite);
+      this.sprite.setCollider('circle');
+
       
 
 
-      if(this.hp >= 14){
-        image(gameIMG[3],this.x,this.y);
-        animation(dmgAnim[3],this.x+37,this.y+37);
-        this.speed = 0;
-        return;
-      }else{image(gameIMG[0],this.x,this.y);}
+
       /*for (var i = 0; i < jet.length; i++){
         if (timer % 2 == 0){
           image(jetAnim[i],this.x, this.y);
         }  
       }*/
-      
-
-      /*
-      strokeWeight(5);
-      stroke('Red');
-      point(this.x,this.y);
-      point(this.x + 74, this.y);
-      point(this.x, this.y + 74);
-      point(this.x + 74, this.y + 74);
-      */
 
     }
 
@@ -103,9 +89,17 @@ class player {
     }
 
     damage(){
-      if (this.hp >=14){
-        return;
+      if(this.sprite.collide(rock.sprite)){
+        rock.damage();
+        this.hp += 2; 
+        this.speed = 0;
       }
+      if(this.hp >= 14){
+        image(gameIMG[3],this.x,this.y);
+        animation(dmgAnim[3],this.x+37,this.y+37);
+        this.speed = 0;
+        return;
+      }else{image(gameIMG[0],this.x,this.y);}
       if (this.hp >= 4){
         animation(dmgAnim[0],this.x+15,this.y+15,);
       }
@@ -117,5 +111,5 @@ class player {
       }
       
     }
-  }
+}//Bottom of Class Bracket. Stop fucking with it.
   

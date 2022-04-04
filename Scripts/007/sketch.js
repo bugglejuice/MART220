@@ -80,8 +80,8 @@ function draw() {
   background(gameIMG[1]);
   rockSpawner();//Spawn Asteroids
   ship.spawn();
+  collisionManager();
   timeIt();
-  ship.shoot();
   healthbar();
   UI();
   runtime();
