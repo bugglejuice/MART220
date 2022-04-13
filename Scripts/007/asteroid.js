@@ -30,22 +30,15 @@ class asteroid {
             mult = 3;
           }
       }
+      this.damage();
     }
 
     display(){
-      let timeToRock = 0;
+
       this.sprite = createSprite(this.x+50,this.y+50,100,100);
       this.sprite.addImage(astIMG);
       drawSprite(this.sprite);
-      this.sprite.setCollider('circle');
-      // let newRock = setInterval(() => {
-      //   timeToRock++;
-      //   if(timeToRock > 0){
-      //     clearInterval(newRock);
-      //   }
-      //   rock.push(new asteroid(800,this.randY,this.speed,10));
-        
-      // },2000);
+
       
     }
 
@@ -55,6 +48,8 @@ class asteroid {
         console.log('The length is',rock.length,'before');
         rock.splice(q);          
         console.log('The length is',rock.length,'after');
+      }else if(this.hp === 0){
+        rockField();
       }
     }
 
@@ -67,12 +62,15 @@ class asteroid {
 
     damage(){
       let q = rock.indexOf(this);
-      if(this.sprite.displace(ship.sprite)){
+      if(dist(this.x,this.y,ship.x,ship.y) <= 70){
         this.speed = 0;
         this.hp = 0;
+        ship.hp += 3;
       }
       if (this.hp <= 0){
-        animation(astAnim,this.x,this.y);
+        //this.animate(astAnim, 1000);
+        //this.sprite.play();
+        //animation(astAnim,this.x,this.y);
         rock.splice(q); 
       }
     }

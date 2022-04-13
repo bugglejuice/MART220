@@ -63,8 +63,17 @@ function UI(){
 
   function rockSpawner(){
       rock.forEach(index => index.spawn());
+
   }
 
-  function collisionManager(){
-    
+  function rockField(){
+    let timeToRock = 0;
+    let newRock = setInterval(() => {
+      timeToRock++;
+      if(timeToRock > 0){
+        clearInterval(newRock);
+      }
+      rock.push(new asteroid(800,this.randY,this.speed,10));
+      
+    },2000);
   }

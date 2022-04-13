@@ -54,3 +54,7 @@ Reorganize file structure to ease editing. Implemented simple thruster animation
 ### Week 6: Continued improvement
 #### 2/28/22
 Added health bar and counter features. Also created sprites and spritesheets for player and obstacles but did not get sprites for asteroids fully implemented. Need to populate sprite class to fully integrate the generation of obstacles nor the damage to obstacles. Still struggling with particles fired from player stopping their draw when the key is released. Need to begin to plan the start and end of the game. Need to keep working on it as much as possible this week to maintain momentum as the project is hitting a critical stage of development where the puzzle pieces are starting to fall into place.
+
+###Week 7: Collisions
+#### 4/13/22(VERY LATE)
+Finally. after entirely too long struggling with p5 play's collisions, was able to use distance to determine collisions. Asteroids are also now in an array so that they can self-repopulate. Will find a way to make them spawn for frequently as time moves but for now mission accomplished. I am extremely frustrated with struggling for so long on a simple problem before I reach out to my local community for help and it is a failing that I need to address on a personal level. 

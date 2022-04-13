@@ -63,6 +63,7 @@ function setup() {
   for(var i = 0; i<1; i++){
     rock.push(new asteroid(800,200,random(2,6),10)); 
   }
+
 //Jets
   for(var i = 0; i < jet.length; i++){
     jetIMG.push(new imageclass("Assets/sprites/Jet/"+jet[i],0,0));
@@ -80,7 +81,6 @@ function draw() {
   background(gameIMG[1]);
   rockSpawner();//Spawn Asteroids
   ship.spawn();
-  collisionManager();
   timeIt();
   healthbar();
   UI();

@@ -47,7 +47,7 @@ class player {
       this.sprite = createSprite(this.x+37,this.y+37,74,74);
       this.sprite.addImage(gameIMG[0]);
       drawSprite(this.sprite);
-      this.sprite.setCollider('circle');
+      //this.sprite.setCollider('circle');
 
       
 
@@ -89,11 +89,6 @@ class player {
     }
 
     damage(){
-      if(this.sprite.collide(rock.sprite)){
-        rock.damage();
-        this.hp += 2; 
-        this.speed = 0;
-      }
       if(this.hp >= 14){
         image(gameIMG[3],this.x,this.y);
         animation(dmgAnim[3],this.x+37,this.y+37);
